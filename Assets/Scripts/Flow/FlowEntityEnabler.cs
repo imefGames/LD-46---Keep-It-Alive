@@ -5,10 +5,11 @@ public class FlowEntityEnabler : MonoBehaviour
     public EFlowState[] EnabledFlowStates;
     void Start()
     {
-        FlowManager.Get().FlowStateChanged.AddListener(OnFlowStateChanged);
+        FlowManager.Get().FlowStateChanged.AddListener(UpdateVisibility);
+        UpdateVisibility(FlowManager.Get().FlowState);
     }
 
-    void OnFlowStateChanged(EFlowState flowState)
+    void UpdateVisibility(EFlowState flowState)
     {
         bool isEnabled = false;
         foreach (EFlowState allowedState in EnabledFlowStates)
