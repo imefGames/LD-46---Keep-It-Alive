@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class AnimatedPlaySound : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int PlaySound = 0;
+    public AudioClip Clip;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (PlaySound != 0)
+        {
+            PlaySound = 0;
+            AudioSource source = GetComponent<AudioSource>();
+            source.Stop();
+            source.clip = Clip;
+            source.Play();
+        }
     }
 }
