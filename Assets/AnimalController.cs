@@ -57,6 +57,13 @@ public class AnimalController : MonoBehaviour
             case EAnimalState.DoingActivity:
             {
                 m_ActivityRemainingTime -= Time.deltaTime;
+
+                if (m_CurrentActivity.RefilledStat != EStat.None)
+                {
+                    StatController stats = GetComponent<StatController>();
+                    stats.RefillStat(m_CurrentActivity.RefilledStat, m_CurrentActivity.StatRefillRate);
+                }
+
                 if (m_ActivityRemainingTime <= 0.0f)
                 {
                     State = EAnimalState.Idle;

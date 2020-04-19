@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum EStat
 {
+    None,
     Hunger,
     Thirst,
     Fun
@@ -53,5 +54,17 @@ public class StatController : MonoBehaviour
             }
         }
         return 0.0f;
+    }
+
+    public void RefillStat(EStat statType, float amount)
+    {
+        foreach (Stat s in Stats)
+        {
+            if (s.StatType == statType)
+            {
+                s.StatValue = Mathf.Clamp(s.StatValue + Time.deltaTime * amount, 0.0f, 1.0f);
+                break;
+            }
+        }
     }
 }
