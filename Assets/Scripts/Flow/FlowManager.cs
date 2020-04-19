@@ -5,7 +5,8 @@ public enum EFlowState
 {
     StartupMenu,
     InGame,
-    EndGame
+    EndGame,
+    GameOver
 }
 
 [System.Serializable]

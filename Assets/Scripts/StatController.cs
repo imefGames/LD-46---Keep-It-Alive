@@ -52,6 +52,15 @@ public class StatController : MonoBehaviour
         {
             s.StatValue = Mathf.Clamp(s.StatValue - Time.deltaTime * s.DecaySpeed * multiplier, 0.0f, 1.0f);
         }
+
+        if (GetStat(EStat.Thirst) == 0.0f || GetStat(EStat.Hunger) == 0.0f)
+        {
+            FlowManager flowManager = FlowManager.Get();
+            if (flowManager.FlowState == EFlowState.InGame)
+            {
+                flowManager.FlowState = EFlowState.GameOver;
+            }
+        }
     }
 
     public float GetStat(EStat statType)
