@@ -1,18 +1,57 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+
+public enum EStat
+{
+    Hunger,
+    Thirst,
+    Fun
+}
+
+[Serializable]
+public class Stat
+{
+    public EStat StatType;
+    public float StatValue = 0.0f;
+    public float DecaySpeed = 0.0f;
+}
 
 public class StatController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Stat[] Stats;
+    public float DepressionMultiplier = 1.0f;
+
     void Start()
     {
-        
+        foreach (Stat s in Stats)
+        {
+            s.StatValue = 1.0f;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float multiplier = 1.0f;
+        if (GetStat(EStat.Fun) == 0.0f)
+        {
+            multiplier = DepressionMultiplier;
+        }
+
+        foreach (Stat s in Stats)
+        {
+            s.StatValue = Mathf.Clamp(s.StatValue - Time.deltaTime * s.DecaySpeed * multiplier, 0.0f, 1.0f);
+        }
+    }
+
+    public float GetStat(EStat statType)
+    {
+        foreach (Stat s in Stats)
+        {
+            if (s.StatType == statType)
+            {
+                return s.StatValue;
+            }
+        }
+        return 0.0f;
     }
 }
