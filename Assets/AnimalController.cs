@@ -15,6 +15,7 @@ public class AnimalController : MonoBehaviour
     private ActivitySpot[] AvailableActivities;
 
     public EAnimalState State = EAnimalState.Idle;
+    public float ActivityFacingRorationSpeed;
 
     private System.Random m_Random = new System.Random();
     private ActivitySpot m_CurrentActivity;
@@ -57,6 +58,14 @@ public class AnimalController : MonoBehaviour
             case EAnimalState.DoingActivity:
             {
                 m_ActivityRemainingTime -= Time.deltaTime;
+
+                if (m_CurrentActivity.LookPosition != null)
+                {
+                    Vector3 dir = m_CurrentActivity.LookPosition.position - transform.position;
+                    dir.y = 0;
+                    Quaternion rot = Quaternion.LookRotation(dir);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, rot, ActivityFacingRorationSpeed * Time.deltaTime);
+                }
 
                 if (m_CurrentActivity.RefilledStat != EStat.None)
                 {

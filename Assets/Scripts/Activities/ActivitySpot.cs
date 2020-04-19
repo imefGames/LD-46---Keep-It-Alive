@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class ActivitySpot : MonoBehaviour
 {
     public Transform ActivityPosition;
+    public Transform LookPosition;
     public float ActivityDuration;
     public bool IsActivityDoable;
     public bool DisableActivityOnEnd;
@@ -16,9 +17,13 @@ public class ActivitySpot : MonoBehaviour
 
     public void MakeActivityDoable()
     {
-        if (ActivityDoable != null)
+        if (IsActivityDoable == false)
         {
-            ActivityDoable.Invoke();
+            IsActivityDoable = true;
+            if (ActivityDoable != null)
+            {
+                ActivityDoable.Invoke();
+            }
         }
     }
 
