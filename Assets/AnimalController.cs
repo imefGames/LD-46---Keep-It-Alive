@@ -49,7 +49,10 @@ public class AnimalController : MonoBehaviour
                 {
                     Animator animator = GetComponent<Animator>();
                     animator.SetBool("IsRunning", false);
-                    animator.SetBool(m_CurrentActivity.AnimationProperty, true);
+                    if (m_CurrentActivity.AnimationProperty != "")
+                    {
+                        animator.SetBool(m_CurrentActivity.AnimationProperty, true);
+                    }
 
                     State = EAnimalState.DoingActivity;
                     m_CurrentActivity.StartActivity();
@@ -76,8 +79,11 @@ public class AnimalController : MonoBehaviour
 
                 if (m_ActivityRemainingTime <= 0.0f)
                 {
-                    Animator animator = GetComponent<Animator>();
-                    animator.SetBool(m_CurrentActivity.AnimationProperty, false);
+                    if (m_CurrentActivity.AnimationProperty != "")
+                    {
+                        Animator animator = GetComponent<Animator>();
+                        animator.SetBool(m_CurrentActivity.AnimationProperty, false);
+                    }
 
                     State = EAnimalState.Idle;
                     m_CurrentActivity.EndActivity();
