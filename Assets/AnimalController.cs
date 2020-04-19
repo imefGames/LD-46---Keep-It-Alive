@@ -95,12 +95,29 @@ public class AnimalController : MonoBehaviour
 
     private List<ActivitySpot> FindDoableActivities()
     {
+        StatController stats = GetComponent<StatController>();
+        List<EStat> lowStats = stats.ComputeLowStats();
+
         List<ActivitySpot> doableActivities = new List<ActivitySpot>();
-        foreach (ActivitySpot activity in AvailableActivities)
+        if (lowStats.Count != 0)
         {
-            if (activity.IsActivityDoable)
+            foreach (ActivitySpot activity in AvailableActivities)
             {
-                doableActivities.Add(activity);
+                if (activity.IsActivityDoable && lowStats.Exists(x => x == activity.RefilledStat))
+                {
+                    doableActivities.Add(activity);
+                }
+            }
+        }
+
+        if (doableActivities.Count == 0)
+        {
+            foreach (ActivitySpot activity in AvailableActivities)
+            {
+                if (activity.IsActivityDoable)
+                {
+                    doableActivities.Add(activity);
+                }
             }
         }
         return doableActivities;

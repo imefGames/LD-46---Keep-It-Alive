@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum EStat
@@ -96,5 +97,18 @@ public class StatController : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public List<EStat> ComputeLowStats()
+    {
+        List<EStat> lowStats = new List<EStat>();
+        foreach (Stat s in Stats)
+        {
+            if (s.StatValue < s.CriticalValue || s.StatValue < s.WarningValue)
+            {
+                lowStats.Add(s.StatType);
+            }
+        }
+        return lowStats;
     }
 }
