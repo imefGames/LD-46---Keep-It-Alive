@@ -14,6 +14,7 @@ public class ActivitySpot : MonoBehaviour
     public UnityEvent ActivityDoable;
     public EStat RefilledStat = EStat.None;
     public float StatRefillRate = 0.0f;
+    public string AnimationProperty;
 
     public void MakeActivityDoable()
     {
