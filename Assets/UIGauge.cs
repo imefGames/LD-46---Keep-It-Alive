@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UIGauge : MonoBehaviour
 {
     private float m_Value = 1.0f;
+    private Color m_Color;
 
     public float Value
     {
@@ -17,5 +19,19 @@ public class UIGauge : MonoBehaviour
         }
     }
 
+    public Color Color
+    {
+        get { return m_Color; }
+        set
+        {
+            m_Color = value;
+            if (GaugeImage != null)
+            {
+                GaugeImage.color = m_Color;
+            }
+        }
+    }
+
     public RectTransform GaugeTransform;
+    public Image GaugeImage;
 }

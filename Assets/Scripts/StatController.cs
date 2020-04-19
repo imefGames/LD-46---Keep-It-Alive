@@ -9,12 +9,21 @@ public enum EStat
     Fun
 }
 
+public enum EStatState
+{
+    Normal,
+    Warning,
+    Critical
+}
+
 [Serializable]
 public class Stat
 {
     public EStat StatType;
     public float StatValue = 0.0f;
     public float DecaySpeed = 0.0f;
+    public float WarningValue = 0.0f;
+    public float CriticalValue = 0.0f;
 }
 
 public class StatController : MonoBehaviour
@@ -54,6 +63,27 @@ public class StatController : MonoBehaviour
             }
         }
         return 0.0f;
+    }
+
+    public EStatState GetStatState(EStat statType)
+    {
+        foreach (Stat s in Stats)
+        {
+            if (s.StatType == statType)
+            {
+                EStatState state = EStatState.Normal;
+                if (s.StatValue < s.CriticalValue)
+                {
+                    state = EStatState.Critical;
+                }
+                else if (s.StatValue < s.WarningValue)
+                {
+                    state = EStatState.Warning;
+                }
+                return state;
+            }
+        }
+        return EStatState.Normal;
     }
 
     public void RefillStat(EStat statType, float amount)

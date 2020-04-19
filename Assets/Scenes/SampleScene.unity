@@ -2375,6 +2375,9 @@ MonoBehaviour:
   HungerGauge: {fileID: 6032658403038121995}
   ThirstGauge: {fileID: 1466862944}
   FunGauge: {fileID: 821455384}
+  NormalColor: {r: 0, g: 1, b: 0.01834917, a: 1}
+  WarningColor: {r: 1, g: 0.99149597, b: 0, a: 1}
+  CriticalColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &821455382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9770,13 +9773,19 @@ MonoBehaviour:
   - StatType: 1
     StatValue: 0
     DecaySpeed: 0.01
+    WarningValue: 0.5
+    CriticalValue: 0.2
   - StatType: 2
     StatValue: 0
-    DecaySpeed: 0.02
+    DecaySpeed: 0.011
+    WarningValue: 0.5
+    CriticalValue: 0.2
   - StatType: 3
     StatValue: 0
     DecaySpeed: 0.03
-  DepressionMultiplier: 10
+    WarningValue: 0.5
+    CriticalValue: 0.2
+  DepressionMultiplier: 5
 --- !u!1 &3428575376225399628
 GameObject:
   m_ObjectHideFlags: 0

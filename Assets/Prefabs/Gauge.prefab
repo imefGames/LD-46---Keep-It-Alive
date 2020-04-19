@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GaugeTransform: {fileID: 6061314892952571874}
+  GaugeImage: {fileID: 6061314892952571875}
 --- !u!1 &6061314892686661965
 GameObject:
   m_ObjectHideFlags: 0
