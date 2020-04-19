@@ -35,6 +35,9 @@ public class AnimalController : MonoBehaviour
                     NavMeshAgent agent = GetComponent<NavMeshAgent>();
                     agent.destination = m_CurrentActivity.ActivityPosition.position;
                     m_ActivityRemainingTime = m_CurrentActivity.ActivityDuration;
+
+                    Animator animator = GetComponent<Animator>();
+                    animator.SetBool("IsRunning", true);
                 }
                 break;
             }
@@ -43,6 +46,9 @@ public class AnimalController : MonoBehaviour
                 NavMeshAgent agent = GetComponent<NavMeshAgent>();
                 if (agent.remainingDistance == 0.0f)
                 {
+                    Animator animator = GetComponent<Animator>();
+                    animator.SetBool("IsRunning", false);
+
                     State = EAnimalState.DoingActivity;
                     m_CurrentActivity.StartActivity();
                 }
