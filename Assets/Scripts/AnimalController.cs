@@ -163,4 +163,29 @@ public class AnimalController : MonoBehaviour
         }
         return doableActivities;
     }
+
+    public void Reset()
+    {
+        if (m_CurrentActivity != null)
+        {
+            Animator animator = GetComponent<Animator>();
+            animator.SetBool("IsRunning", false);
+            if (m_CurrentActivity.AnimationProperty != "")
+            {
+                animator.SetBool(m_CurrentActivity.AnimationProperty, false);
+            }
+            if (m_CurrentActivity.ReactionAnimationProperty != "")
+            {
+                animator.SetBool(m_CurrentActivity.ReactionAnimationProperty, false);
+            }
+        }
+
+        State = EAnimalState.Idle;
+        m_CurrentActivity = null;
+        m_ActivityRemainingTime = 0.0f;
+        m_ReactionRemainingTime = 0.0f;
+
+        transform.localPosition = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
+    }
 }

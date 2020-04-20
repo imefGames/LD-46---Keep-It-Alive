@@ -120,4 +120,12 @@ public class StatController : MonoBehaviour
         }
         return lowStats;
     }
+
+    public void Reset()
+    {
+        foreach (Stat s in Stats)
+        {
+            s.StatValue = 1.0f;
+        }
+    }
 }
