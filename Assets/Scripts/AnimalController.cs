@@ -127,7 +127,6 @@ public class AnimalController : MonoBehaviour
                     }
 
                     State = EAnimalState.Idle;
-                    m_CurrentActivity.EndActivity();
                 }
                 break;
             }
