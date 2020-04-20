@@ -1596,6 +1596,7 @@ GameObject:
   - component: {fileID: 408652196}
   - component: {fileID: 408652195}
   - component: {fileID: 408652199}
+  - component: {fileID: 408652200}
   m_Layer: 5
   m_Name: RefillWaterButton
   m_TagString: Untagged
@@ -1740,6 +1741,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayedText: Refill Water
   DisplayTextArea: {fileID: 1736972802}
+--- !u!114 &408652200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408652193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf633f2909197824d976d1cc3c4607e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WatchedActivity: {fileID: 1628517197}
+  IconImage: {fileID: 1254293868}
 --- !u!1 &449603415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,6 +2648,7 @@ GameObject:
   - component: {fileID: 727474635}
   - component: {fileID: 727474634}
   - component: {fileID: 727474638}
+  - component: {fileID: 727474639}
   m_Layer: 5
   m_Name: RepairPianoButton
   m_TagString: Untagged
@@ -2777,6 +2793,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayedText: Repair Piano
   DisplayTextArea: {fileID: 1736972802}
+--- !u!114 &727474639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727474632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf633f2909197824d976d1cc3c4607e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WatchedActivity: {fileID: 7222799255884762329}
+  IconImage: {fileID: 43117849}
 --- !u!1 &761136351
 GameObject:
   m_ObjectHideFlags: 0
@@ -4102,6 +4132,7 @@ GameObject:
   - component: {fileID: 1193591956}
   - component: {fileID: 1193591955}
   - component: {fileID: 1193591959}
+  - component: {fileID: 1193591960}
   m_Layer: 5
   m_Name: RefillFoodButton
   m_TagString: Untagged
@@ -4246,6 +4277,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayedText: Refill Food
   DisplayTextArea: {fileID: 1736972802}
+--- !u!114 &1193591960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193591953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf633f2909197824d976d1cc3c4607e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WatchedActivity: {fileID: 3044993037155493916}
+  IconImage: {fileID: 179633163}
 --- !u!1 &1205145992
 GameObject:
   m_ObjectHideFlags: 0
