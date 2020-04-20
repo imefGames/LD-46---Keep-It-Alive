@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e310f34d2570fd4c91d856b87cddf01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayedText: Camera 2
+  DisplayedText: Water Camera
   DisplayTextArea: {fileID: 1736972802}
 --- !u!224 &251252539 stripped
 RectTransform:
@@ -3312,7 +3312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e310f34d2570fd4c91d856b87cddf01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayedText: Camera 3
+  DisplayedText: Food Camera
   DisplayTextArea: {fileID: 1736972802}
 --- !u!1 &1036420551
 GameObject:
@@ -4216,7 +4216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e310f34d2570fd4c91d856b87cddf01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayedText: Camera 1
+  DisplayedText: Piano Camera
   DisplayTextArea: {fileID: 1736972802}
 --- !u!1 &1250878397
 GameObject:
