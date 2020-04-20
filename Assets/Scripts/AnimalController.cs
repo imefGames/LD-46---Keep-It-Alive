@@ -6,7 +6,8 @@ public enum EAnimalState
 {
     Idle,
     MovingToActivity,
-    DoingActivity
+    DoingActivity,
+    Reaction
 }
 
 public class AnimalController : MonoBehaviour
@@ -20,6 +21,7 @@ public class AnimalController : MonoBehaviour
     private System.Random m_Random = new System.Random();
     private ActivitySpot m_CurrentActivity;
     private float m_ActivityRemainingTime;
+    private float m_ReactionRemainingTime;
 
     void Update()
     {
@@ -83,6 +85,45 @@ public class AnimalController : MonoBehaviour
                     {
                         Animator animator = GetComponent<Animator>();
                         animator.SetBool(m_CurrentActivity.AnimationProperty, false);
+                    }
+
+                    if (m_CurrentActivity.HasReaction)
+                    {
+                        if (m_CurrentActivity.ReactionAnimationProperty != "")
+                        {
+                            Animator animator = GetComponent<Animator>();
+                            animator.SetBool(m_CurrentActivity.ReactionAnimationProperty, true);
+                        }
+
+                        AudioClip clip = m_CurrentActivity.GetRandomAudioClip();
+                        if (clip != null)
+                        {
+                            AudioSource audio = GetComponent<AudioSource>();
+                            audio.clip = clip;
+                            audio.Play();
+                        }
+
+                        m_ReactionRemainingTime = m_CurrentActivity.ReactionDuration;
+                        State = EAnimalState.Reaction;
+                    }
+                    else
+                    {
+                        State = EAnimalState.Idle;
+                    }
+
+                    m_CurrentActivity.EndActivity();
+                }
+                break;
+            }
+            case EAnimalState.Reaction:
+            {
+                m_ReactionRemainingTime -= Time.deltaTime;
+                if (m_ReactionRemainingTime < 0.0f)
+                {
+                    if (m_CurrentActivity.ReactionAnimationProperty != "")
+                    {
+                        Animator animator = GetComponent<Animator>();
+                        animator.SetBool(m_CurrentActivity.ReactionAnimationProperty, false);
                     }
 
                     State = EAnimalState.Idle;

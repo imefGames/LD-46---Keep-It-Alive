@@ -16,6 +16,13 @@ public class ActivitySpot : MonoBehaviour
     public float StatRefillRate = 0.0f;
     public string AnimationProperty;
 
+    public bool HasReaction;
+    public float ReactionDuration;
+    public string ReactionAnimationProperty;
+    public AudioClip[] ReactionAudioClips;
+
+    private System.Random m_Random = new System.Random();
+
     public void MakeActivityDoable()
     {
         if (IsActivityDoable == false)
@@ -46,5 +53,15 @@ public class ActivitySpot : MonoBehaviour
         {
             ActivityFinished.Invoke();
         }
+    }
+
+    public AudioClip GetRandomAudioClip()
+    {
+        int index = m_Random.Next(ReactionAudioClips.Length);
+        if (index >= 0 && index < ReactionAudioClips.Length)
+        {
+            return ReactionAudioClips[index];
+        }
+        return null;
     }
 }

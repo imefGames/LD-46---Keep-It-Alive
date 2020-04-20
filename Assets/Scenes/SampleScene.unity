@@ -3789,6 +3789,10 @@ MonoBehaviour:
   RefilledStat: 0
   StatRefillRate: 0
   AnimationProperty: 
+  HasReaction: 0
+  ReactionDuration: 0
+  ReactionAnimationProperty: 
+  ReactionAudioClips: []
 --- !u!1 &1096913014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,6 +5837,14 @@ MonoBehaviour:
   RefilledStat: 2
   StatRefillRate: 0.1
   AnimationProperty: IsEating
+  HasReaction: 1
+  ReactionDuration: 2
+  ReactionAnimationProperty: 
+  ReactionAudioClips:
+  - {fileID: 8300000, guid: 2fee83eda6edca44c8d41225640de940, type: 3}
+  - {fileID: 8300000, guid: c41ac32352003b1479666f0deec1ce29, type: 3}
+  - {fileID: 8300000, guid: e755dc4118c9dea4a8a4edf6877f958e, type: 3}
+  - {fileID: 8300000, guid: 43ad78753c68a1c4fa5adf1d87272de5, type: 3}
 --- !u!23 &1628517198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5992,7 +6004,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1663099592}
   - component: {fileID: 1663099591}
-  - component: {fileID: 1663099590}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -6000,14 +6011,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1663099590
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663099589}
-  m_Enabled: 1
 --- !u!20 &1663099591
 Camera:
   m_ObjectHideFlags: 0
@@ -6574,6 +6577,10 @@ MonoBehaviour:
   RefilledStat: 0
   StatRefillRate: 0
   AnimationProperty: 
+  HasReaction: 0
+  ReactionDuration: 0
+  ReactionAnimationProperty: 
+  ReactionAudioClips: []
 --- !u!1 &1973747468
 GameObject:
   m_ObjectHideFlags: 0
@@ -6949,7 +6956,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107668201}
-  - component: {fileID: 2107668202}
   m_Layer: 0
   m_Name: Activities
   m_TagString: Untagged
@@ -6976,41 +6982,6 @@ Transform:
   m_Father: {fileID: 856442791}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2107668202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107668200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1663de42c78de4c81021b88433a860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActivityPosition: {fileID: 0}
-  LookPosition: {fileID: 0}
-  ActivityDuration: 0
-  IsActivityDoable: 0
-  DisableActivityOnEnd: 0
-  ActivityStarted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ActivityFinished:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ActivityDoable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  RefilledStat: 0
-  StatRefillRate: 0
-  AnimationProperty: 
 --- !u!114 &1209828759892882756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7861,6 +7832,14 @@ MonoBehaviour:
   RefilledStat: 1
   StatRefillRate: 0.1
   AnimationProperty: IsEating
+  HasReaction: 1
+  ReactionDuration: 2
+  ReactionAnimationProperty: 
+  ReactionAudioClips:
+  - {fileID: 8300000, guid: 2fee83eda6edca44c8d41225640de940, type: 3}
+  - {fileID: 8300000, guid: c41ac32352003b1479666f0deec1ce29, type: 3}
+  - {fileID: 8300000, guid: e755dc4118c9dea4a8a4edf6877f958e, type: 3}
+  - {fileID: 8300000, guid: 43ad78753c68a1c4fa5adf1d87272de5, type: 3}
 --- !u!4 &3044993037155923003
 Transform:
   m_ObjectHideFlags: 0
@@ -12288,6 +12267,14 @@ MonoBehaviour:
   RefilledStat: 3
   StatRefillRate: 0.1
   AnimationProperty: IsPlayingPiano
+  HasReaction: 1
+  ReactionDuration: 2
+  ReactionAnimationProperty: 
+  ReactionAudioClips:
+  - {fileID: 8300000, guid: 2fee83eda6edca44c8d41225640de940, type: 3}
+  - {fileID: 8300000, guid: c41ac32352003b1479666f0deec1ce29, type: 3}
+  - {fileID: 8300000, guid: e755dc4118c9dea4a8a4edf6877f958e, type: 3}
+  - {fileID: 8300000, guid: 43ad78753c68a1c4fa5adf1d87272de5, type: 3}
 --- !u!1 &7222799255884762330
 GameObject:
   m_ObjectHideFlags: 0
